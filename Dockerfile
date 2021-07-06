@@ -1,4 +1,4 @@
-FROM alpine:3.13 AS socat-builder
+FROM alpine:3.14 AS socat-builder
 ARG socat_url=http://www.dest-unreach.org/socat/download/socat-1.7.4.1.tar.gz
 RUN \
   cd /tmp && \
