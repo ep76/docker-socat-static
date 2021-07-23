@@ -26,6 +26,6 @@ RUN \
   make install prefix=/socat datarootdir=.
 
 FROM scratch
-LABEL maintainer="https://github.com/ep76/socat-static"
+LABEL maintainer="https://github.com/ep76/docker-socat-static"
 COPY --from=socat-builder /socat /usr
 ENTRYPOINT [ "/usr/bin/socat" ]
