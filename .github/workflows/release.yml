@@ -18,7 +18,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v3
         with:
-          images: ${{ env.target }}
+          images: ${{ github.repository_owner }}/${{ env.target }}
           tags: |
             type=ref,event=tag
             type=match,pattern=V\d+
