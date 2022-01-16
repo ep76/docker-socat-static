@@ -1,5 +1,5 @@
 FROM alpine:3.15 AS socat-builder
-ARG socat_url=http://www.dest-unreach.org/socat/download/socat-1.7.4.2.tar.gz
+ARG socat_url=http://www.dest-unreach.org/socat/download/socat-1.7.4.3.tar.gz
 RUN \
   cd /tmp && \
   apk add --no-cache \
