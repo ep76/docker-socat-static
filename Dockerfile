@@ -17,11 +17,12 @@ RUN \
     && \
   curl -fsSL "${socat_url}" | tar xz --strip-components=1 && \
   sed -i 's/ncurses/ncursesw/g' configure && \
-  ./configure \
-    --prefix=/usr \
-    CPPFLAGS=-DNETDB_INTERNAL=-1 \
-    LDFLAGS=-static \
-    && \
+  sc_cv_getprotobynumber_r=2 \
+    ./configure \
+      --prefix=/usr \
+      CPPFLAGS=-DNETDB_INTERNAL=-1 \
+      LDFLAGS=-static \
+      && \
   sed -i 's|<netinet/if_ether\.h>|<linux/if_ether.h>|' sysincludes.h && \
   make install prefix=/socat datarootdir=.
 
